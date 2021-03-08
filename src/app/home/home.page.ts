@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private keyboard: Keyboard) { }
+
+  onEventChange(event: any) {
+    console.log(event.target.value);
+  }
+
+  keyboardShow() {
+    this.keyboard.hide();
+  }
 
 }
