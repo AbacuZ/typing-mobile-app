@@ -1,17 +1,52 @@
-<ion-content [fullscreen]="true" >
-  <div id="background-main">
-    <ion-item>
-      <ion-label>Username or Email</ion-label>
-      <ion-input inputmode="email"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label>Enter a number</ion-label>
-      <ion-textarea 
-        inputmode="numeric" 
-        (change)="onEventChange($event)" 
-        (ionFocus)="keyboardShow()"
-      ></ion-textarea>
-    </ion-item>
+<ion-content [fullscreen]="true">
+  <div class="container-fluid">
+    <div class="row text-center p-4">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-8">
+        <span class="text-sd mr-2 font-weight-bold h4 text-blue-ct"
+          >โปรแกรมฝึกพิมพ์ดีดสองภาษาไทย/อังกฤษ</span
+        >
+        <span class="blinking-cursor">|</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-8">
+        <div class="d-flex flex-column">
+          <div class="p-2">
+            <button
+              type="button"
+              class="btn btn-light btn-block text-left shadow rounded"
+            >
+              1. แบบฝึกหัดพิมพ์ดีด
+            </button>
+          </div>
+          <div class="p-2">
+            <button
+              type="button"
+              class="btn btn-light btn-block text-left shadow rounded"
+            >
+              2. แบบฝึกหัดเพิ่มความชำนาญ
+            </button>
+          </div>
+          <div class="p-2">
+            <button
+              type="button"
+              class="btn btn-light btn-block text-left shadow rounded"
+            >
+              3. แบบฝึกหัดพัฒนาความเร็วและความแม่นยำ
+            </button>
+          </div>
+          <div class="p-2">
+            <button
+              type="button"
+              class="btn btn-light btn-block text-left shadow rounded"
+            >
+              4. แบบฝึกพิมพ์สองภาษา
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </ion-content>

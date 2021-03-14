@@ -1,8 +1,16 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+/* Fonts */
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../assets/fonts/Sarabun-Regular.ttf');
+}
+
 /** Ionic CSS Variables **/
 :root {
+  --ion-font-family: "Sarabun";
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;

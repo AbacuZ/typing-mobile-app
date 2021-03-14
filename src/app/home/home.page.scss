@@ -2,3 +2,73 @@ ion-content {
   --background: url("../../assets/images/background-main.jpg") no-repeat
     center/cover fixed;
 }
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 30px;
+  color: #2e3d48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(66, 153, 225);
+  }
+}
+
+@-moz-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(66, 153, 225);
+  }
+}
+
+@-webkit-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(66, 153, 225);
+  }
+}
+
+@-ms-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(66, 153, 225);
+  }
+}
+
+@-o-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(66, 153, 225);
+  }
+}
+
+.text-sd {
+  text-shadow: rgba(66, 153, 225, 0.5) 0.1em 0.1em 0.2em;
+  // text-shadow: rgba(66, 153, 225) 0.1em 0.1em 0.2em;
+}
+
+.text-blue-ct {
+  color: #4299e1;
+}

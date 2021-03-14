@@ -32,7 +32,10 @@
               }
             ],
             "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -166,6 +169,7 @@
     }
   },
   "cli": {
+    "analytics": "dc897ef8-c935-4523-a68e-6f8f9cfa99df",
     "defaultCollection": "@ionic/angular-toolkit"
   },
   "schematics": {
