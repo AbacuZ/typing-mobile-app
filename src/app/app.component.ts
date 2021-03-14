@@ -13,6 +13,6 @@ export class AppComponent {
 
   initialApp() {
     console.log(this.screenOrientation.type);
-    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
   }
 }
