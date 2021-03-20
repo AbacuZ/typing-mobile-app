@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
 
 @Component({
@@ -6,9 +7,14 @@ import { Keyboard } from '@ionic-native/keyboard/ngx';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor(private keyboard: Keyboard) { }
+  session: any;
+
+  constructor(private keyboard: Keyboard, private router: Router) { }
+
+  ngOnInit() {
+  }
 
   onEventChange(event: any) {
     console.log(event.target.value);
@@ -16,6 +22,14 @@ export class HomePage {
 
   keyboardShow() {
     this.keyboard.hide();
+  }
+
+  onSelectSession(session: any) {
+    this.session = session;
+  }
+
+  selectLang(lang: any) {
+    this.router.navigate([`/${this.session}//session-main`, this.session, lang]);
   }
 
 }

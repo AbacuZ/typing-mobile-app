@@ -1,69 +1,48 @@
 <ion-app>
   <ion-header translucent>
     <ion-toolbar>
-      <ion-title><div [routerLink]="['/home']">Back</div></ion-title>
+      <div class="d-flex">
+        <div class="p-3" [routerLink]="['/home']">
+          <i class="fas fa-home"></i> Home
+        </div>
+        <div class="ml-auto p-3" (click)="changeLanguage()">
+          <i class="fas fa-language"></i> เปลี่ยนภาษา
+        </div>
+      </div>
     </ion-toolbar>
   </ion-header>
   <ion-content [fullscreen]="true">
     <div class="accordion" id="accordionExample">
-      <div class="card">
-        <div class="card-header" id="headingOne">
+      <div class="card" *ngFor="let session of data">
+        <div class="card-header" [attr.id]="'heading' + session.target">
           <h2 class="mb-0">
             <button
               class="btn btn-link btn-block text-left"
               type="button"
               data-toggle="collapse"
-              data-target="#collapseOne"
+              [attr.data-target]="'#collapse' + session.target"
               aria-expanded="true"
-              aria-controls="collapseOne"
+              [attr.aria-controls]="'collapse' + session.target"
             >
-              ฝึกทักษะการพิมพ์ดีดภาษาไทยวันที่ 1
+              {{ session.sessionTitle }}
             </button>
           </h2>
         </div>
 
         <div
-          id="collapseOne"
+          [attr.id]="'collapse' + session.target"
           class="collapse"
-          aria-labelledby="headingOne"
+          [attr.aria-labelledby]="'heading' + session.target"
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <div *ngFor="let item of session1.day1; let last = last">
-              <div class="p-1" (click)="onClickSession(item.value)">
+            <div *ngFor="let item of session.sessionLists; let last = last">
+              <div (click)="onClickSession(item.filename)">
                 <div>{{ item.label }}</div>
                 <hr class="solid" *ngIf="!last" />
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h2 class="mb-0">
-          <button
-            class="btn btn-link btn-block text-left collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo"
-          >
-            ฝึกทักษะการพิมพ์ดีดภาษาไทยวันที่ 2
-          </button>
-        </h2>
-      </div>
-      <div
-        id="collapseTwo"
-        class="collapse"
-        aria-labelledby="headingTwo"
-        data-parent="#accordionExample"
-      >
-        <div class="card-body">
-          Some placeholder content for the second accordion panel. This panel is
-          hidden by default.
         </div>
       </div>
     </div>

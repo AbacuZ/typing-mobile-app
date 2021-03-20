@@ -5,11 +5,11 @@ import { SessionOneMainComponent } from './components/session-one-main/session-o
 
 const routes: Routes = [
   {
-    path: 'session-main',
+    path: 'session-main/:name/:lang',
     component: SessionOneMainComponent,
   },
   {
-    path: 'session-content',
+    path: 'session-content/:path',
     component: SessionOneContentComponent
   }
 ];

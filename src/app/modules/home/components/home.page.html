@@ -17,7 +17,9 @@
             <button
               type="button"
               class="btn btn-light btn-block text-left shadow rounded"
-              [routerLink]="['/1/session-main']"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+              (click)="onSelectSession('1')"
             >
               1. แบบฝึกหัดพิมพ์ดีด
             </button>
@@ -26,6 +28,9 @@
             <button
               type="button"
               class="btn btn-light btn-block text-left shadow rounded"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+              (click)="onSelectSession('2')"
             >
               2. แบบฝึกหัดเพิ่มความชำนาญ
             </button>
@@ -34,6 +39,9 @@
             <button
               type="button"
               class="btn btn-light btn-block text-left shadow rounded"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+              (click)="onSelectSession('3')"
             >
               3. แบบฝึกหัดพัฒนาความเร็วและความแม่นยำ
             </button>
@@ -42,6 +50,9 @@
             <button
               type="button"
               class="btn btn-light btn-block text-left shadow rounded"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+              (click)="onSelectSession('4')"
             >
               4. แบบฝึกพิมพ์สองภาษา
             </button>
@@ -51,3 +62,45 @@
     </div>
   </div>
 </ion-content>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+  data-backdrop="false"
+>
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Select Language</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" data-dismiss="modal" (click)="selectLang('TH')">
+          <div class="col-sm-3">
+            <img src="assets/images/iconfinder_th.png" width="32px" />
+          </div>
+          <div class="col-sm-9">ภาษาไทย</div>
+        </div>
+        <hr class="solid" />
+        <div class="row" data-dismiss="modal" (click)="selectLang('EN')">
+          <div class="col-sm-3">
+            <img src="assets/images/iconfinder_usa.png" width="32px" />
+          </div>
+          <div class="col-sm-9">English</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
